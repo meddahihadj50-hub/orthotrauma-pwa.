@@ -1,0 +1,22 @@
+{
+  "name": "OrthoTrauma Plan",
+  "short_name": "OrthoTrauma",
+  "description": "Chirurgie Orth. & Traumatologique — outil de démonstration",
+  "start_url": "./",
+  "display": "standalone",
+  "background_color": "#080c10",
+  "theme_color": "#0d1218",
+  "orientation": "landscape",
+  "icons": [
+    {
+      "src": "icons/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "icons/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
