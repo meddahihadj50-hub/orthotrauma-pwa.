@@ -8900,15 +8900,13 @@ async function crmImportFile(file) {
    data = JSON.parse(text);
    } else if (file.name.endsWith('.csv')) {
    // Parse CSV first line as headers, second as data
-   const lines = text.split('
-').map(l => l.split(',').map(v => v.trim().replace(/^"|"$/g,'')));
+   const lines = text.split('\\n').map(l => l.split(',').map(v => v.trim().replace(/^"|"$/g,'')));
    const headers = lines[0], vals = lines[1] || [];
    data = { resourceType:'Patient', id: vals[0] || 'IMPORT' };
    headers.forEach((h, i) => { if (i < vals.length) data[h.toLowerCase()] = vals[i]; });
    } else {
    // HL7 v2 — parse basic segments
-   const segments = text.split('
-').filter(Boolean);
+   const segments = text.split('\\n').filter(Boolean);
    const pid = segments.find(s => s.startsWith('PID')) || '';
    const fields = pid.split('|');
    data = {
@@ -12883,7 +12881,6 @@ observer.observe(document.documentElement, { attributes: true });
 
 </body>
 </html>
-
 
 
 
